@@ -2,25 +2,14 @@ public class HelloApp {
 
     public static void main(String[] args) {
 
-        if (args.length == 0) {
-            System.out.println("Please provide your name");
+        if (args.length < 2) {
+            System.out.println("Please provide first and last name");
             return;
         }
 
-        String name = args[0];
-        boolean valid = true;
+        String firstName = args[0];
+        String lastName = args[1];
 
-        for (int i = 0; i < name.length(); i++) {
-            if (!Character.isLetter(name.charAt(i))) {
-                valid = false;
-                break;
-            }
-        }
-
-        if (!valid) {
-            System.out.println("Invalid name");
-        } else {
-            System.out.println("Hello, " + name);
-        }
+        System.out.println("Hello, " + firstName + " " + lastName + "!");
     }
 }
