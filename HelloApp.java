@@ -7,10 +7,13 @@ public class HelloApp {
             String result = "";
 
             for (String name : args) {
-                result += name + " ";
+                result += name + ", ";
             }
 
-            System.out.println("Hello, " + result.trim() + "!");
+            // remove last ", "
+            result = result.substring(0, result.length() - 2);
+
+            System.out.println("Hello, " + result + "!");
         }
     }
 }
