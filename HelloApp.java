@@ -3,18 +3,24 @@ public class HelloApp {
     public static void main(String[] args) {
 
         if (args.length == 0) {
-            System.out.println("Please provide your name.");
+            System.out.println("Please provide your name");
             return;
         }
 
         String name = args[0];
+        boolean valid = true;
 
-        // check if name contains only letters
-        if (!name.matches("[a-zA-Z]+")) {
-            System.out.println("Invalid name. Please enter alphabet characters only.");
-            return;
+        for (int i = 0; i < name.length(); i++) {
+            if (!Character.isLetter(name.charAt(i))) {
+                valid = false;
+                break;
+            }
         }
 
-        System.out.println("Hello, " + name + "!");
+        if (!valid) {
+            System.out.println("Invalid name");
+        } else {
+            System.out.println("Hello, " + name);
+        }
     }
 }
